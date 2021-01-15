@@ -1,0 +1,44 @@
+<html>
+    <head>
+        <title>Giriş Yap</title>
+        <link rel="stylesheet" href="form.css">
+    </head>
+    <body>
+        <div class="main">
+          <form>
+                <h2>Giriş Yap</h2>
+                <div>
+                  <input id="user" type="text" name="username" required>
+                    <label>Kullanıcı Adı</label>
+                    <span></span>
+               </div>
+               <div>
+                    <input id="pass" type="password" name="password" required>
+                    <label>Şifre</label>
+                    <span></span>
+                </div>
+                <button onclick="validate()" id="btn">Giriş</button>
+             </form>
+        </div>
+        <script>
+            function validate(){
+                var username = document.getElementById("user").value;
+                var password = document.getElementById("pass").value;
+                if(username == "admin" && password == "12345")
+                {
+                    window.setTimeout(function(){
+                    location.href='index.html'
+                    })
+                }
+                else if (username =="" || password ==""){
+                    alert("Kullanıcı adı veya şifre girmediniz!!")
+                }
+                else{
+                    alert("Başarısız");
+                    console.log("Başarısız")
+                }
+
+            }   
+        </script>
+    </body>
+</html>
